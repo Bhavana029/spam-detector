@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spam Detector</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+ <nav>
+  <div class="nav-container">
+    <div class="logo">
+     <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo-img" />
+
+      <span class="site-name">SpamShield</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#intro">Intro</a></li>
+      <li><a href="#detect">Detect</a></li>
+      <li><a href="#instructions">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+  <section id="intro">
+    <h2>Introduction</h2>
+    <div class="intro-text">
+      <p>In today's digital world, unwanted messages—commonly known as spam—pose a serious threat to personal privacy, productivity, and online safety. Spam messages often contain misleading content, phishing links, or fraudulent offers intended to deceive users. With the rise in mobile communication and email usage, it has become crucial to identify and filter out such messages automatically. This web application utilizes machine learning techniques to analyze and classify messages as either "spam" or "ham" (legitimate). By training on thousands of real-world examples, our model learns to detect patterns, keywords, and common spam indicators with high accuracy. This tool provides users a simple yet powerful way to protect themselves from digital clutter and potential scams.</p>
+      <p>Spam messages are unwanted communications that often appear in emails, SMS, and other digital platforms. These messages are usually sent in bulk and can range from harmless advertisements to dangerous scams. Spammers aim to deceive users into clicking links, sharing personal information, or downloading malicious files. Because sending spam is cheap and fast, spammers can target thousands of people at once, often hiding behind fake identities and using convincing language to appear legitimate.</p>
+      <p>Over time, spam has evolved from basic promotional texts to sophisticated scams that are difficult to detect. Many messages are crafted to look official or urgent, increasing the likelihood that recipients will respond or take action. This poses a serious risk to individuals and organizations alike, leading to data breaches, identity theft, and financial loss.</p>
+      <p>Beyond technical issues, spam also affects user trust and digital experiences. Constant exposure to spam can be frustrating and mentally exhausting, especially for people who are less familiar with technology. As the digital world expands, the need to recognize and protect against spam becomes increasingly important. By staying aware of spam's tactics and threats, users can better safeguard their personal information and maintain safe communication practices online.</p>
+    </div>
+  </section>
+
+ <section id="detect">
+  <h2>Detect Spam</h2>
+  <div class="detect-container">
+    <form id="predictForm" class="input-side" enctype="multipart/form-data">
+      <textarea name="message" placeholder="Enter your message..."></textarea><br>
+
+      <div class="file-upload">
+        <label for="file">Or upload a file:</label>
+        <input type="file" name="file" accept=".pdf,.docx" /><br>
+      </div>
+
+      <button type="submit">Analyze</button>
+    </form>
+
+    <div class="result-side">
+      <div id="result"></div>
+      <canvas id="pieChart" width="300" height="300"></canvas>
+    </div>
+  </div>
+</section>
+
+
+  <section id="instructions">
+  <h2>How to Use the Spam Detection Application</h2>
+  <ul>
+    <li><strong>Text Input:</strong>
+      <ul>
+        <li>On the <em>Detect Spam</em> section of the page, you will see a text box labeled "Enter your message...".</li>
+        <li>Simply type or paste the message you want to analyze into this text box.</li>
+        <li>Click the "Analyze" button to submit the text.</li>
+        <li>The application will return whether it's classified as "Spam" or "Ham" along with a confidence score.</li>
+      </ul>
+    </li>
+    <li><strong>File Input (PDF or DOCX):</strong>
+      <ul>
+        <li>You can upload a PDF or DOCX file for analysis.</li>
+        <li>Click the "Choose File" button and select your file.</li>
+        <li>Click the "Analyze" button to submit it for processing.</li>
+        <li><strong>Note:</strong> Only the text in the file will be analyzed. Images (e.g., certificates or scans) in PDFs will be ignored.</li>
+      </ul>
+    </li>
+    <li><strong>Results:</strong>
+      <ul>
+        <li>The results will display in the "Result" section.</li>
+        <li>A pie chart will show the classification: Spam vs. Ham.</li>
+        <li>The classification label and confidence score will be shown below the chart.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+
+  <section id="faq">
+  <h2>FAQs</h2>
+
+  <details>
+    <summary>What types of messages can this app detect?</summary>
+    <p>This app can detect spam and legitimate ("ham") messages from plain text inputs as well as text extracted from PDF and DOCX files.</p>
+  </details>
+
+  <details>
+    <summary>Can I upload scanned certificates or images in PDFs?</summary>
+    <p>No, the application only reads and analyzes textual content. Images, including scanned documents or certificates inside PDFs, are not processed.</p>
+  </details>
+
+  <details>
+    <summary>How accurate is the spam prediction?</summary>
+    <p>The model has been trained on thousands of real-world SMS messages and can classify spam with high accuracy, but like all AI models, it's not perfect.</p>
+  </details>
+
+  <details>
+    <summary>Is my uploaded file or message stored?</summary>
+    <p>No, your data is not stored on the server. It is processed in real-time and discarded immediately after generating a result.</p>
+  </details>
+
+  <details>
+    <summary>What file types are supported?</summary>
+    <p>Currently, the app supports PDF and DOCX files that contain readable text. Other formats like TXT or image-based PDFs are not supported.</p>
+  </details>
+
+  <details>
+    <summary>Can I use this on mobile?</summary>
+    <p>Yes, the application is mobile-friendly and works on most modern browsers and devices.</p>
+  </details>
+
+</section>
+
+
+  <section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:mekalabhavana029@gmail.com">mekalabhavana029@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/bhavana-mekala-8b396b306" target="_blank">linkedin.com/in/bhavana-mekala</a></p>
+</section>
+
+
+  <script>
+    document.getElementById('predictForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+
+      // Send data to Flask backend
+      const res = await fetch('/predict', { method: 'POST', body: formData });
+      const data = await res.json();
+
+      if (data.error) {
+        // Display error message if file/message is invalid
+        document.getElementById('result').innerText = `Error: ${data.error}`;
+      } else {
+        // Display prediction result
+        document.getElementById('result').innerText =
+          `Prediction: ${data.label} (Score: ${data.score})`;
+
+        // Create a pie chart based on spam/ham percentages
+        const ctx = document.getElementById('pieChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['Ham', 'Spam'],
+            datasets: [{
+              data: [data.ham_pct, data.spam_pct],
+              backgroundColor: ['#4caf50', '#f44336']
+            }]
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

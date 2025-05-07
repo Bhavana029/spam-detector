@@ -1,0 +1,68 @@
+/* General reset and styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background image and body styles */
+body {
+  background-image: url('/static/bg.jpg'); /* Adjust to your image path */
+  background-size: cover;
+  background-position: center;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Content container for positioning elements */
+.content {
+  background-color: rgba(0, 0, 0, 0.0); /* Semi-transparent background for readability */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Heading styling */
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow for better text visibility */
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* Button styling */
+.explore-button {
+  font-size: 1.2em;
+  padding: 15px 30px;
+  background-color: #4CAF50; /* Green button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.explore-button:hover {
+  background-color: #48a049; /* Darker green when hovered */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .explore-button {
+    font-size: 1em;
+    padding: 12px 24px;
+  }
+}

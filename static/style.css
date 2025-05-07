@@ -1,0 +1,419 @@
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+    overflow-y: hidden;
+}
+body {
+  margin-top: 100px; /* Adjust based on your nav height */
+  font-family: sans-serif;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #111; /* darker for more contrast */
+  color: #fff;
+  padding: 12px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin:0;
+  padding:0;
+
+}
+
+.logo-img {
+
+  height: 40px;
+  width: 40px;
+  border-radius: 50%; /* Makes it a circle */
+  margin-right: 10px; /* Space to the right of the logo */
+  object-fit: cover; /* Keeps the image from stretching */
+  background-color: white; /* Optional: gives contrast if image has transparency */
+
+
+}
+
+.site-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 195, 255, 0.5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #00c3ff;
+}
+
+section {
+  padding: 40px;
+}
+textarea {
+  width: 300px;
+  height: 100px;
+}
+button {
+  padding: 10px;
+}
+.centered {
+  text-align: center;
+  margin-top: 100px;
+}
+/* General layout for detect section */
+.detect-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.input-side {
+  flex: 1;
+  min-width: 300px;
+}
+
+.result-side {
+  flex: 1;
+  min-width: 300px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  font-size: 16px;
+   pointer-events: auto;
+}
+
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+nav ul li a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+#pieChart {
+  max-width: 300px;
+  height: 150px !important; /* Adjust as needed */
+}
+/* Alternating background colors, padding, and rounded corners */
+section:nth-of-type(odd) {
+  background-color: #ffe5b4; /* Peach */
+}
+
+section:nth-of-type(even) {
+  background-color: #ffd6e8; /* Light Pink */
+}
+
+section {
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  scroll-margin-top: 120px; /* adjust this to match or slightly exceed navbar height */
+
+}
+
+/* Hover effect */
+section:hover {
+  background-color: #fff3f3;
+  transform: scale(1.01);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+/* Style for the intro text */
+/* Style for the intro text */
+.intro-text {
+  font-family: Arial, sans-serif; /* Sets font family */
+  font-size: 1.0rem; /* Adjusts font size */
+  line-height: 1.6; /* Improves readability */
+  color: #333; /* Sets text color */
+  text-align: justify; /* Aligns text evenly */
+  padding: 20px; /* Adds padding for better spacing */
+  /* Light background color for better readability */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.intro-text p {
+  text-indent: 20px; /* Adds space to the first line of each paragraph */
+}
+
+#intro {
+  padding: 30px;
+}
+
+.intro-text br {
+  line-height: 2; /* Adds extra space between paragraphs */
+}
+
+#intro {
+  padding: 30px;
+}
+#instructions {
+  font-family: Arial, sans-serif;
+
+  padding: 20px 40px;
+  line-height: 1.6;
+}
+
+#instructions {
+  font-family: Arial, sans-serif;
+  font-size: 0.875rem; /* approx. 14px */
+  padding: 1.25rem 2.5rem;
+  line-height: 1.6;
+}
+
+#instructions ul {
+  margin: 1rem 0;
+  padding-left: 1.25rem;
+}
+
+#instructions li {
+  margin-bottom: 0.625rem;
+}
+#faq {
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  padding: 1rem;
+}
+
+#faq h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#faq details {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+
+#faq details:hover {
+  background-color: #f1f1f1;
+}
+
+#faq summary {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#faq p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+#detect {
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+  font-family: 'Arial', sans-serif;
+}
+
+#detect h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #004d40;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.detect-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.input-side,
+.result-side {
+  flex: 1 1 350px;
+  max-width: 500px;
+  background: white;
+  border: 1px solid #d0d0d0;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+}
+
+.input-side:hover,
+.result-side:hover {
+  transform: translateY(-4px);
+}
+
+.input-side textarea {
+  width: 100%;
+  height: 120px;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  resize: vertical;
+  margin-bottom: 1rem;
+  font-family: inherit;
+}
+
+.file-upload {
+  margin-bottom: 1.2rem;
+}
+
+.file-upload label {
+  font-weight: 600;
+  color: #00796b;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.file-upload input[type="file"] {
+  padding: 0.3rem;
+}
+
+.input-side button {
+  background-color: #00796b;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-side button:hover {
+  background-color: #004d40;
+}
+
+.result-side #result {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+textarea[name="message"] {
+  width: 100%;
+  height: 110px;
+  padding: 1rem; /* 🛠️ adds space inside the textbox */
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+.detect-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px;
+  flex-wrap: wrap; /* Optional: for responsiveness */
+}
+
+.input-side, .result-side {
+  flex: 1;
+  min-width: 300px; /* Ensures responsiveness */
+  background-color:#d5ddde;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+}
+#contact {
+  background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 16px;
+  margin: 40px 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#contact:hover {
+background: #c2cacc;
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #4a148c;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+#contact a {
+  color: #00695c;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+#contact a:hover {
+  background-color: #d1c4e9;
+  color: #004d40;
+  transform: scale(1.05);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
